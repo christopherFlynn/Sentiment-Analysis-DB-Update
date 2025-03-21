@@ -24,3 +24,4 @@ Thumbs.db
 firebase_credentials.json
 
 sentiment_data/
+run_push.sh

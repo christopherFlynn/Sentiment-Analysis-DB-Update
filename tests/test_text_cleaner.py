@@ -5,7 +5,7 @@ def test_clean_text_removes_url():
     assert "http" not in clean_text(text)
 
 def test_clean_text_masks_profanity():
-    text = "This is ass"
+    text = "This is fuck"
     cleaned = clean_text(text)
-    assert "ass" not in cleaned
-    assert "*" * len("ass") in cleaned
+    assert "fuck" not in cleaned
+    assert "*" * len("fuck") in cleaned

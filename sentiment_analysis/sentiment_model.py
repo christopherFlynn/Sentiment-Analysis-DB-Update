@@ -1,8 +1,17 @@
 import joblib
 import os
 
-MODEL_PATH = os.path.join("models", "sentiment_model.pkl")
-VECTORIZER_PATH = os.path.join("models", "vectorizer.pkl")
+
+# Get absolute path to current file's directory
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Go up one level to project root, then into 'models'
+MODEL_PATH = os.path.join(BASE_DIR, '..', 'models', 'sentiment_model.pkl')
+VECTORIZER_PATH = os.path.join(BASE_DIR, '..', 'models', 'vectorizer.pkl')
+
+# Resolve to absolute path
+MODEL_PATH = os.path.abspath(MODEL_PATH)
+VECTORIZER_PATH = os.path.abspath(VECTORIZER_PATH)
 
 def load_model():
     model = joblib.load(MODEL_PATH)
