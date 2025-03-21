@@ -7,9 +7,7 @@ import json
 from datetime import datetime
 
 # Firebase setup
-cred_dict = json.loads(st.secrets["FIREBASE_CREDS"])
-cred = credentials.Certificate(cred_dict)
-
+cred = credentials.Certificate("firebase_credentials.json")
 if not firebase_admin._apps:
     firebase_admin.initialize_app(cred, {
         'databaseURL': 'https://my-website-517f8-default-rtdb.firebaseio.com'
